@@ -6,8 +6,20 @@
 </head>
 <body>
 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<p>Click <a th:href="@{/greeting}">here</a> to go to the greetingCreator.</p>
+<br/>
+<br/>
+<br/>
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
+</form>
+<br/>
+<br/>
+<br/>
+<form th:action="@{/add}" method="post">
+    <div><label> First name : <input type="text" name="firstName"/> </label></div>
+    <div><label> Last name: <input type="text" name="lastName"/> </label></div>
+    <input type="submit" value="Add customer"/>
 </form>
 </body>
 </html>
